@@ -21,7 +21,11 @@
 <div class="d-flex flex-column min-vh-100">
 	<@liferay.control_menu />
 
+<#if root_css_class?contains("rtl")>
+	<div class="d-flex flex-column flex-fill material-theme-rtl-main-class" id="wrapper">
+<<#else>
 	<div class="d-flex flex-column flex-fill material-theme-main-class" id="wrapper">
+</#if>
 		<#if show_header>
 			<header id="banner">
 				<div class="navbar navbar-classic navbar-top py-3">
@@ -44,6 +48,10 @@
 									</div>
 								</#if>
 							</div>
+
+							<#if show_language_selector>
+								<#include "${full_templates_path}/language_selector.ftl" />
+							</#if>
 
 							<div class="autofit-col">
 								<@liferay.user_personal_bar />
