@@ -5,6 +5,30 @@
 				{
 					"frontendTokens": [
 						{
+							"defaultValue": "2.75rem",
+							"label": "card-header-icon-size",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "card-header-icon-size"
+								}
+							],
+							"name": "cardHeaderIconSize",
+							"type": "String"
+						}
+					],
+					"label": "card",
+					"name": "card"
+				}
+			],
+			"label": "material-theme",
+			"name": "materialTheme"
+		},
+		{
+			"frontendTokenSets": [
+				{
+					"frontendTokens": [
+						{
 							"defaultValue": "#fff",
 							"editorType": "ColorPicker",
 							"label": "white",

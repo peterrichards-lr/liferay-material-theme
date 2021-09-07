@@ -113,3 +113,26 @@ body {
 		padding-top: 3rem;
 	}
 }
+
+.card-stats {
+	.card-header.card-header-icon {
+		.card-icon {
+			.material-icons {
+				svg {
+					line-height: var(--card-header-icon-size);
+					width: var(--card-header-icon-size);
+					height: var(--card-header-icon-size);
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+.card-footer {
+	.stats {
+		.material-icons {
+			top: 0px !important;
+		}
+	}
+}
