@@ -13,6 +13,15 @@
 
 @import 'custom_properties';
 
+.material-theme-main-class {
+	@import './vendor/material-dashboard.scss';
+}
+
+.material-theme-rtl-main-class {
+	@import './vendor/material-dashboard.scss';
+	@import './vendor/material-dashboard-rtl.scss';
+}
+
 body {
 	header {
 		.field-wrapper {
