@@ -19,7 +19,9 @@
 <@liferay_util["include"] page=body_top_include />
 
 <div class="d-flex flex-column min-vh-100">
+<#if show_control_menu == true>
 	<@liferay.control_menu />
+</#if>
 
 <#if root_css_class?contains("rtl")>
 	<div class="d-flex flex-column flex-fill material-theme-rtl-main-class" id="wrapper">
@@ -29,6 +31,10 @@
 		<#include "${full_templates_path}/header.ftl" />
 
 		<section class="${portal_content_css_class} flex-fill" id="content">
+			<#if side_navigation && !css_class?contains("has-edit-mode-menu")>
+				<#include "${full_templates_path}/side_navigation.ftl" />
+			</#if>
+
 			<h2 class="sr-only" role="heading" aria-level="1">${the_title}</h2>
 
 			<#if selectable>

@@ -1,0 +1,145 @@
+@mixin overflow-auto {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+@mixin gsdc-container-max-1600() {
+	@include media-breakpoint-up(lg) {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1600px;
+	}
+}
+
+@mixin gsdc-container-full-width() {
+	margin-left: -16px;
+	margin-right: -16px;
+	max-width: none;
+
+	@include media-breakpoint-up(md) {
+		margin-left: -24px;
+		margin-right: -24px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		margin-left: -36px;
+		margin-right: -36px;
+	}
+}
+
+@mixin gsdc-chart-2-columns($map) {
+	$chart-height: map-get($map, chart-height);
+	$chart-width: map-get($map, chart-width);
+
+	$chart-lg-down-height: map-get($map, chart-lg-down-height);
+	$chart-lg-down-width: map-get($map, chart-lg-down-width);
+
+	$chart-md-down-height: map-get($map, chart-md-down-height);
+	$chart-md-down-width: map-get($map, chart-md-down-width);
+
+	$chart-sm-down-height: map-get($map, chart-sm-down-height);
+	$chart-sm-down-width: map-get($map, chart-sm-down-width);
+
+	$chart-xs-down-height: map-get($map, chart-xs-down-height);
+	$chart-xs-down-width: map-get($map, chart-xs-down-width);
+
+	$legend-stacked-text-align: map-get($map, legend-stacked-text-align);
+	$legend-stacked-sm-down-text-align: map-get($map, legend-stacked-sm-down-text-align);
+
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-evenly;
+
+	.gsdc-chart-container {
+		height: $chart-height;
+		margin-bottom: auto;
+		margin-top: 0;
+		position: relative;
+		width: $chart-width;
+
+		@include media-breakpoint-down(lg) {
+			height: $chart-lg-down-height;
+			width: $chart-lg-down-width;
+		}
+
+		@include media-breakpoint-down(md) {
+			height: $chart-md-down-height;
+			width: $chart-md-down-width;
+		}
+
+		@include media-breakpoint-down(sm) {
+			height: $chart-sm-down-height;
+			width: $chart-sm-down-width;
+		}
+
+		@include media-breakpoint-down(xs) {
+			height: $chart-xs-down-height;
+			width: $chart-xs-down-width;
+		}
+	}
+
+	.gsdc-chart {
+		height: $chart-height;
+		max-height: none !important;
+		width: $chart-width;
+
+		@include media-breakpoint-down(lg) {
+			height: $chart-lg-down-height;
+			width: $chart-lg-down-width;
+		}
+
+		@include media-breakpoint-down(md) {
+			height: $chart-md-down-height;
+			width: $chart-md-down-width;
+		}
+
+		@include media-breakpoint-down(sm) {
+			height: $chart-sm-down-height;
+			width: $chart-sm-down-width;
+		}
+
+		@include media-breakpoint-down(xs) {
+			height: $chart-xs-down-height;
+			width: $chart-xs-down-width;
+		}
+	}
+
+	.gsdc-legend-stacked {
+		text-align: $legend-stacked-text-align;
+
+		@include media-breakpoint-down(sm) {
+			text-align: $legend-stacked-sm-down-text-align;
+		}
+	}
+}
+
+@mixin gsdc-tab-content($width, $mdWidth, $smWidth) {
+	float: left;
+	padding-right: 1.5rem;
+	width: $width;
+
+	@include media-breakpoint-down(md) {
+		padding-right: 3.125rem;
+		width: $mdWidth;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding-right: 0;
+		width: $smWidth;
+
+		.img-fluid {
+			display: flex;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.gsdc-title {
+		line-height: $headings-line-height;
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: calc((2rem - (1em * #{$headings-line-height})) / 2);
+			margin-top: calc((2rem - (1em * #{$headings-line-height})) / 2);
+		}
+	}
+}
