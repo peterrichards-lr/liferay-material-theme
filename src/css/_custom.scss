@@ -789,13 +789,29 @@ body {
 }
 
 .portlet-search-bar {
-	.search-bar-keywords-input {
-		width: 70% !important;
+	.portlet-content-container {
+		margin-top: 20px;
+	}
+
+	.search-bar-simple {
+		font-size: 1.5rem;
+
+		.search-bar-keywords-input {
+			width: 70% !important;
+		}
 	}
 }
 
 .portlet-language {
 	.dropdown {
 		top: -0.75rem;
+
+		.btn {
+			.inline-item {
+				position: relative;
+				font-size: 1.5rem;
+				left: -1rem;
+			}
+		}
 	}
 }
