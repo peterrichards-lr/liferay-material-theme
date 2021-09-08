@@ -1,9 +1,9 @@
 <#if show_header>
     <header id="banner">
-        <#if side_navigation>
-        <div class="navbar navbar-classic navbar-top py-3">
-        <#else>
+        <#if !side_navigation || show_account_selector || show_mini_cart>
         <div class="navbar no-shadow navbar-classic navbar-top py-3">
+        <#else>
+        <div class="navbar navbar-classic navbar-top py-3">
         </#if>
             <div class="container user-personal-bar">
                 <div class="align-items-center autofit-row">
@@ -40,20 +40,6 @@
             </div>
         </div>
 
-        <#if !side_navigation>
-        <div class="navbar no-shadow navbar-classic navbar-expand-md navbar-light pb-3">
-            <div class="container">
-                <a class="${logo_css_class} align-items-center d-inline-flex d-md-none logo-xs" href="${site_default_url}" rel="nofollow">
-                    <img alt="${logo_description}" class="mr-2" height="56" src="${site_logo}" />
-
-                    <#if show_site_name>
-                        <h2 class="font-weight-bold h2 mb-0 text-dark">${site_name}</h2>
-                    </#if>
-                </a>
-
-                <#include "${full_templates_path}/navigation.ftl" />
-            </div>
-        </div>
-        </#if>
+        <#include "${full_templates_path}/navigation.ftl" />
    </header>
 </#if>

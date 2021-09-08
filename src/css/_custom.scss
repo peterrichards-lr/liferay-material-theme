@@ -11,6 +11,7 @@
 @import 'portlet/portlet_decorators';
 @import 'portlet/portlet_hello_world';
 
+@import "./minium/minium";
 @import 'custom_properties';
 
 .material-theme-main-class {
@@ -59,7 +60,6 @@ body {
 		}
 
 		.text-default {
-			color: #6b6c7e;
 			font-weight: 600;
 		}
 
@@ -492,7 +492,7 @@ body {
 
 // Navigation
 
-#content {
+.content-side-navigation {
 	@include media-breakpoint-up(lg) {
 		padding-left: 70px;
 	}
