@@ -1,5 +1,3 @@
-<#assign show_raylife_logo = true />
-
 <nav class="${nav_css_class}" id="navigation" role="navigation">
 	<h1 class="hide-accessible"><@liferay.language key="navigation" /></h1>
 
@@ -9,13 +7,7 @@
 		</svg>
 	</a>
 
-	<#if show_raylife_logo>
-		<a class="raylife-logo-container" href="${site_default_url}">
-			<svg class="raylife-logo">
-				<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#raylife-producer-logo"></use>
-			</svg>
-		</a>
-	<#else>
+	<#if side_navigation_logo>
 		<div class="${logo_css_class}">
 			<img alt="${logo_description}" class="img-fluid logo-image" src="${site_logo}" />
 
@@ -89,34 +81,36 @@
 		</#list>
 
 		<li class="nav-user-bar">
-			<#assign
-				notifications_link = "javascript:;"
-			/>
+			<#if show_notifications>
+				<#assign
+					notifications_link = "javascript:;"
+				/>
 
-			<#if notifications_portlet_url??>
-				<#assign notifications_link = notifications_portlet_url + "&_${notifications_portlet_namespace}_delta=${notifications_delta}&_${notifications_portlet_namespace}_cur=1" />
+				<#if notifications_portlet_url??>
+					<#assign notifications_link = notifications_portlet_url + "&_${notifications_portlet_namespace}_delta=${notifications_delta}&_${notifications_portlet_namespace}_cur=1" />
+				</#if>
+
+				<div class="gsdc-page-header-notification-section">
+					<a class="gsdc-page-header-notification-link js-modal" data-delta="${notifications_delta}" data-notifications-count="${notifications_count}" data-notifications-portlet-namespace="${notifications_portlet_namespace}" data-title="notifications" href="${notifications_link}">
+						<span class="inline-item inline-item-after">
+							<svg class="lexicon-icon lexicon-icon-bell-on" focusable="false" role="presentation">
+								<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#bell-on"></use>
+							</svg>
+						</span>
+					</a>
+				</div>
 			</#if>
-
-			<div class="gsdc-page-header-notification-section">
-				<a class="gsdc-page-header-notification-link js-modal" data-delta="${notifications_delta}" data-notifications-count="${notifications_count}" data-notifications-portlet-namespace="${notifications_portlet_namespace}" data-title="notifications" href="${notifications_link}">
-					<span class="inline-item inline-item-after">
-						<svg class="lexicon-icon lexicon-icon-bell-on" focusable="false" role="presentation">
-							<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#bell-on"></use>
-						</svg>
-					</span>
-				</a>
-			</div>
 
 			<div class="gsdc-page-navigation-user-section">
 				<@liferay.user_personal_bar />
 
-				<#if notifications_portlet_url?? && notifications_count gt 0>
+				<#--  <#if notifications_portlet_url?? && notifications_count gt 0>
 					<a href="${notifications_link}">
 						<span class="badge badge-danger panel-notifications-count">
 							<span class="badge-item badge-item-expand">${notifications_count}</span>
 						</span>
 					</a>
-				</#if>
+				</#if>  -->
 
 				<span class="user-full-name">
 					${user.getFullName()}
@@ -124,37 +118,4 @@
 			</div>
 		</li>
 	</ul>
-
-	<div class="gsdc-page-header-notification-panel">
-		<div class="sidebar-header">
-			<div class="autofit-row sidebar-section">
-				<div class="autofit-col autofit-col-expand">
-					<h4 class="component-title">
-						<span class="text-truncate-inline">
-							<@liferay.language key="notifications" />
-						</span>
-					</h4>
-				</div>
-				<div class="autofit-col">
-					<a aria-expanded="false" class="component-action" href="javascript:;" role="button">
-						<svg class="lexicon-icon lexicon-icon-cog" focusable="false" role="presentation">
-							<use href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#cog"></use>
-						</svg>
-					</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="sidebar-body">
-			<div class="fetched-notifications">
-				<div class="loading-animation"></div>
-			</div>
-
-			<#if notifications_count gt notifications_delta>
-				<a class="hide notification-load-more text-center" href="javascript:;">
-					<@liferay.language key="load-older-notifications" />
-				</a>
-			</#if>
-		</div>
-	</div>
 </nav>

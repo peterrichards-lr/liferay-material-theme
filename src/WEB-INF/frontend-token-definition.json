@@ -75,7 +75,7 @@
 							"type": "String"
 						},
 						{
-							"defaultValue": "#e6e6e6",
+							"defaultValue": "#adb5bd",
 							"editorType": "ColorPicker",
 							"label": "navigation-text-color",
 							"mappings": [

@@ -1,7 +1,9 @@
 <#assign
 	show_footer = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-footer"))
 	show_header = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-header"))
+	show_notifications = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-notifications"))
 	side_navigation = getterUtil.getBoolean(themeDisplay.getThemeSetting("side-navigation"))
+	side_navigation_logo = getterUtil.getBoolean(themeDisplay.getThemeSetting("side-navigation-logo"))
 	show_header_search = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-header-search"))
 	wrap_widget_page_content = getterUtil.getBoolean(themeDisplay.getThemeSetting("wrap-widget-page-content"))
 	show_language_selector = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-language-selector"))
