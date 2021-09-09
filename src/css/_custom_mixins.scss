@@ -3,3 +3,10 @@
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 }
+
+@mixin gradiant($startColorToken, $defaultStartValue, $endColorToken, $defaultEndValue) {
+	$startColor: var($startColorToken, $defaultStartValue);
+	$endColor: var($endColorToken, $defaultEndValue);
+	background-color: $startColor;
+	background: linear-gradient($startColor, $endColor);
+}

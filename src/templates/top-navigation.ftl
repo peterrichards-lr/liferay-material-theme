@@ -7,18 +7,24 @@
 			</button>
 
 			<div class="collapse navbar-collapse" id="navigationCollapse">
+				<div class="minium-topbar__start">
 				<#if !side_navigation && has_navigation>
-				<@liferay.navigation_menu default_preferences="${preferences}" />
+					<@liferay.navigation_menu default_preferences="${preferences}" />
 				</#if>
-
-				<#if show_account_selector>
-				<div class="minium-topbar__account-selector-wrapper">
-					<@liferay_commerce_ui["account-selector"] />
 				</div>
-				</#if>
-				<#if show_mini_cart>
-				<div class="minium-topbar__cart-wrapper">
-					<@liferay_commerce_ui["mini-cart"] spritemap="${themeDisplay.getPathThemeImages()}/icons.svg" />
+
+				<#if show_account_selector || show_mini_cart>
+				<div class="minium-topbar__end">
+					<#if show_account_selector>
+					<div class="minium-topbar__account-selector-wrapper">
+						<@liferay_commerce_ui["account-selector"] />
+					</div>
+					</#if>
+					<#if show_mini_cart>
+					<div class="minium-topbar__cart-wrapper">
+						<@liferay_commerce_ui["mini-cart"] spritemap="${themeDisplay.getPathThemeImages()}/icons.svg" />
+					</div>
+					</#if>
 				</div>
 				</#if>
 			</div>

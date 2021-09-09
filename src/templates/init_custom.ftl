@@ -1,7 +1,6 @@
 <#assign
 	show_footer = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-footer"))
 	show_header = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-header"))
-	show_notifications = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-notifications"))
 	side_navigation = getterUtil.getBoolean(themeDisplay.getThemeSetting("side-navigation"))
 	side_navigation_logo = getterUtil.getBoolean(themeDisplay.getThemeSetting("side-navigation-logo"))
 	show_header_search = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-header-search"))
