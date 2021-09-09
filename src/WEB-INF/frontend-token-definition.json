@@ -87,10 +87,187 @@
 							"name": "navigationTextColor",
 							"type": "String"
 						}
-
 					],
 					"label": "navigation",
 					"name": "navigation"
+				},
+				{
+					"frontendTokens": [
+						{
+							"defaultValue": "#9c27b0",
+							"editorType": "ColorPicker",
+							"label": "upper-header-background",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "upper-header-background"
+								}
+							],
+							"name": "upperHeaderBackground",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#9c27b0",
+							"editorType": "ColorPicker",
+							"label": "upper-header-background-blend",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "upper-header-background-blend"
+								}
+							],
+							"name": "upperHeaderBackgroundBlend",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#FFF",
+							"editorType": "ColorPicker",
+							"label": "upper-header-text-color",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "upper-header-text-color"
+								}
+							],
+							"name": "upperHeaderTextColor",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#FFF",
+							"editorType": "ColorPicker",
+							"label": "lower-header-background",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "lower-header-background"
+								}
+							],
+							"name": "lowerHeaderBackground",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#FFF",
+							"editorType": "ColorPicker",
+							"label": "lower-header-background-blend",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "lower-header-background-blend"
+								}
+							],
+							"name": "lowerHeaderBackgroundBlend",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#777",
+							"editorType": "ColorPicker",
+							"label": "lower-header-text-color",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "lower-header-text-color"
+								}
+							],
+							"name": "lowerHeaderTextColor",
+							"type": "String"
+						},
+						{
+							"defaultValue": "row",
+							"label": "lower-header-flex-direction",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "lower-header-flex-direction"
+								}
+							],
+							"name": "lowerHeaderFlexDirection",
+							"type": "String"
+						},
+						{
+							"defaultValue": "56px",
+							"label": "site-logo-height",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "site-logo-height"
+								}
+							],
+							"name": "siteLogoHeight",
+							"type": "String"
+						},
+						{
+							"defaultValue": "auto",
+							"label": "site-logo-width",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "site-logo-width"
+								}
+							],
+							"name": "siteLogoWidth",
+							"type": "String"
+						}
+					],
+					"label": "header",
+					"name": "header"
+				},
+				{
+					"frontendTokens": [
+						{
+							"defaultValue": "#9c27b0",
+							"editorType": "ColorPicker",
+							"label": "footer-background",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "footer-background"
+								}
+							],
+							"name": "footerBackground",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#9c27b0",
+							"editorType": "ColorPicker",
+							"label": "footer-background-blend",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "footer-background-blend"
+								}
+							],
+							"name": "footerBackgroundBlend",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#FFF",
+							"editorType": "ColorPicker",
+							"label": "footer-text-color",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "footer-text-color"
+								}
+							],
+							"name": "footerTextColor",
+							"type": "String"
+						},
+						{
+							"defaultValue": "#999999",
+							"editorType": "ColorPicker",
+							"label": "footer-liferay-text-color",
+							"mappings": [
+								{
+									"type": "cssVariable",
+									"value": "footer-liferay-text-color"
+								}
+							],
+							"name": "footerLiferayTextColor",
+							"type": "String"
+						}
+					],
+					"label": "footer",
+					"name": "footer"
 				}
 			],
 			"label": "material-theme",

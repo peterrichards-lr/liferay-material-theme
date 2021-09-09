@@ -1,12 +1,6 @@
 <nav class="${nav_css_class}" id="navigation" role="navigation">
 	<h1 class="hide-accessible"><@liferay.language key="navigation" /></h1>
 
-	<a class="d-lg-none link-monospaced link-primary" data-content="#navigation" data-toggle="sidenav" href="#gsdcSitePages" role="button">
-		<svg class="gsdc-icon-bars lexicon-icon">
-			<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#gsdc-bars"></use>
-		</svg>
-	</a>
-
 	<#if side_navigation_logo>
 		<div class="${logo_css_class}">
 			<img alt="${logo_description}" class="img-fluid logo-image" src="${site_logo}" />
@@ -19,98 +13,48 @@
 		</div>
 	</#if>
 
-	<a class="component-link d-lg-none link-monospaced" href="#open-search" role="button">
-		<svg class="lexicon-icon lexicon-icon-search">
-			<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#search"></use>
-		</svg>
-	</a>
-
-	<ul aria-label="<@liferay.language key="site-pages" />" class="nav nav-stacked site-pages" id="gsdcSitePages" role="menubar">
-		<li class="d-lg-none">
-			<a class="close" data-content="#navigation" data-toggle="sidenav" href="#gsdcSitePages" role="button">
-				<svg class="lexicon-icon lexicon-icon-times">
-					<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#times"></use>
-				</svg>
-			</a>
-		</li>
+	<ul aria-label="<@liferay.language key="site-pages" />" class="nav nav-stacked site-pages" role="menubar">
 
 		<#list nav_items as nav_item>
+		<#assign
+			nav_item_attr_has_popup = ""
+			nav_item_attr_selected = ""
+			nav_item_css_class = "nav-item"
+			nav_item_layout = nav_item.getLayout()
+			nav_item_icon_css_class = "icon-angle-right"
+		/>
+
+		<#assign currentLayoutParentPlid = layout.getParentPlid() />
+
+		<#if nav_item.isSelected() || (nav_item_layout.getPlid() == currentLayoutParentPlid)>
 			<#assign
-				nav_item_attr_has_popup = ""
-				nav_item_attr_selected = ""
-				nav_item_css_class = "nav-item"
-				nav_item_layout = nav_item.getLayout()
-				nav_item_icon_css_class = "icon-angle-right"
+				nav_item_attr_has_popup = "aria-haspopup='true'"
+				nav_item_attr_selected = "aria-selected='true'"
+				nav_item_css_class = "nav-item selected"
 			/>
+		</#if>
 
-			<#assign currentLayoutParentPlid = layout.getParentPlid() />
-
-			<#if nav_item.isSelected() || (nav_item_layout.getPlid() == currentLayoutParentPlid)>
-				<#assign
-					nav_item_attr_has_popup = "aria-haspopup='true'"
-					nav_item_attr_selected = "aria-selected='true'"
-					nav_item_css_class = "nav-item selected"
-				/>
-			</#if>
-
-			<#assign
-				nav_item_icon_hash = {
-					"Home":"home",
-					"Apple":"video"
-				}
-			/>
-
-			<#if nav_item_icon_hash[nav_item.getName()]??>
-				<#assign
-					nav_item_icon_css_class = nav_item_icon_hash[nav_item.getName()]
-				/>
-			</#if>
-
-			<li ${nav_item_attr_selected} class="${nav_item_css_class}" id="layout_${nav_item.getLayoutId()}" role="presentation">
-				<a aria-labelledby="layout_${nav_item.getLayoutId()}" ${nav_item_attr_has_popup} class="nav-link" href="${nav_item.getURL()}" ${nav_item.getTarget()} role="menuitem">
+		<li ${nav_item_attr_selected} class="${nav_item_css_class}" id="layout_${nav_item.getLayoutId()}" role="presentation">
+			<a aria-labelledby="layout_${nav_item.getLayoutId()}" ${nav_item_attr_has_popup} class="nav-link" href="${nav_item.getURL()}" ${nav_item.getTarget()} role="menuitem">
+				<span class="${nav_item_icon_css_class} layout-icon">
 					<@liferay_theme["layout-icon"] layout=nav_item_layout />
-
-					<span class="${nav_item_icon_css_class} layout-icon">
-						<svg class="nav-item-icon">
-							<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#${nav_item_icon_css_class}"></use>
-						</svg>
-					</span>
-					<span class="layout-name ${nav_item.getName()}">${nav_item.getName()}</span>
-				</a>
-			</li>
+				</span>
+				<span class="layout-name ${nav_item.getName()}">${nav_item.getName()}</span>
+			</a>
+		</li>
 		</#list>
 
 		<li class="nav-user-bar">
-			<#if show_notifications>
-				<#assign
-					notifications_link = "javascript:;"
-				/>
-
-				<#if notifications_portlet_url??>
-					<#assign notifications_link = notifications_portlet_url + "&_${notifications_portlet_namespace}_delta=${notifications_delta}&_${notifications_portlet_namespace}_cur=1" />
-				</#if>
-
-				<div class="gsdc-page-header-notification-section">
-					<a class="gsdc-page-header-notification-link js-modal" data-delta="${notifications_delta}" data-notifications-count="${notifications_count}" data-notifications-portlet-namespace="${notifications_portlet_namespace}" data-title="notifications" href="${notifications_link}">
-						<span class="inline-item inline-item-after">
-							<svg class="lexicon-icon lexicon-icon-bell-on" focusable="false" role="presentation">
-								<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#bell-on"></use>
-							</svg>
-						</span>
-					</a>
-				</div>
-			</#if>
-
-			<div class="gsdc-page-navigation-user-section">
+			<div class="user-section">
 				<@liferay.user_personal_bar />
 
-				<#--  <#if notifications_portlet_url?? && notifications_count gt 0>
+				<#if notifications_portlet_url?? && notifications_count gt 0>
 					<a href="${notifications_link}">
 						<span class="badge badge-danger panel-notifications-count">
 							<span class="badge-item badge-item-expand">${notifications_count}</span>
 						</span>
 					</a>
-				</#if>  -->
+				</#if>
 
 				<span class="user-full-name">
 					${user.getFullName()}

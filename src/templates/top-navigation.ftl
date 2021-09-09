@@ -1,5 +1,5 @@
 <#if !side_navigation || show_account_selector || show_mini_cart>
-<div class="navbar no-shadow navbar-classic navbar-expand-md navbar-light pb-3">
+<div class="navbar no-shadow navbar-classic navbar-expand-md navbar-light lower-header lower-header-bg lower-header-text-color">
 	<div class="container">
 		<#if is_setup_complete>
 			<button aria-controls="navigationCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navigationCollapse" data-toggle="liferay-collapse" type="button">
