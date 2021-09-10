@@ -7,7 +7,7 @@
 <head>
 	<title>${html_title}</title>
 
-	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
+	<meta content="width=device-width, initial-scale=1, minimum-scale=1" name="viewport" />
 
 	<@liferay_util["include"] page=top_head_include />
 </head>
