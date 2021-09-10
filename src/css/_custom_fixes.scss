@@ -71,7 +71,7 @@
     box-shadow: unset;
     margin-bottom: unset;
 
-    .container {
+    .container, .container-fluid  {
         background: transparent;
     }
 }
@@ -79,7 +79,7 @@
 .lower-header {
     box-shadow: 0 4px 18px -10px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
 
-    .container {
+    .container, .container-fluid {
         background: transparent;
     }
 }

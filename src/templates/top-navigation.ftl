@@ -1,6 +1,13 @@
 <#if !side_navigation || show_account_selector || show_mini_cart>
+    <#assign top_bar_css_classes = "container-fluid user-peronal-bar mb-lg-0 mr-lg-8 mt-lg-0 pb-lg-0 pl-lg-0 pr-lg-0 pt-lg-0 mr-sm-8 ml-sm-8 mr-8 ml-8 mr-md-8 ml-md-8" />
+
+    <#if side_navigation>
+        <#assign top_bar_css_classes = top_bar_css_classes + " ml-lg-10" />
+    <#else>
+        <#assign top_bar_css_classes = top_bar_css_classes + " ml-lg-8" />
+    </#if>
 <div class="navbar no-shadow navbar-classic navbar-expand-md navbar-light lower-header lower-header-bg lower-header-text-color">
-	<div class="container">
+	<div class="${top_bar_css_classes}">
 		<#if is_setup_complete>
 			<button aria-controls="navigationCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right" data-target="#navigationCollapse" data-toggle="liferay-collapse" type="button">
 				<span class="navbar-toggler-icon"></span>

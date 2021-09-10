@@ -1,11 +1,19 @@
 <#if show_header>
+    <#assign user_personal_bar_css_classes = "container-fluid user-peronal-bar mb-lg-0 mr-lg-8 mt-lg-0 pb-lg-0 pl-lg-0 pr-lg-0 pt-lg-0 mr-sm-8 ml-sm-8 mr-8 ml-8 mr-md-8 ml-md-8" />
+
+    <#if side_navigation>
+        <#assign user_personal_bar_css_classes = user_personal_bar_css_classes + " ml-lg-10" />
+    <#else>
+        <#assign user_personal_bar_css_classes = user_personal_bar_css_classes + " ml-lg-8" />
+    </#if>
+
     <header id="banner">
         <#if !side_navigation || show_account_selector || show_mini_cart>
         <div class="navbar no-shadow navbar-classic navbar-top upper-header upper-header-bg upper-header-text-color">
         <#else>
         <div class="navbar navbar-classic navbar-top upper-header upper-header-bg upper-header-text-color">
         </#if>
-            <div class="container user-personal-bar">
+            <div class="${user_personal_bar_css_classes}">
                 <div class="align-items-center autofit-row">
                     <#if !side_navigation_logo>
                     <a class="${logo_css_class} align-items-center d-md-inline-flex d-sm-none d-none logo-md upper-header-text-color" href="${site_default_url}" title="<@liferay.language_format arguments="" key="go-to-x" />">
