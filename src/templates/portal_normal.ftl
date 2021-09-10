@@ -55,6 +55,87 @@
 		</section>
 		
 		<#include "${full_templates_path}/footer.ftl" />
+
+		<#if use_sign_in_modal && !is_signed_in>
+			<div id="loginCardContainer" style="background: rgba(0, 0, 0, 0.5); height: 100%; width: 100%; z-index: 1500; position: fixed; top: 0; left: 0; visibility: hidden;">
+				<div style="margin-left: 90%; margin-right: 20px; margin-top: 20px; position: relative;">
+					<a class="btn btn-primary" href="javascript:void(0)" onclick="$('#loginCardContainer').css('visibility', 'hidden');" id="hide-sign-in" rel="nofollow">X</a>
+				</div>
+				<div class="b2b-login-card card" id="loginCardArea" style="background-color: #ffffff; min-width:300px; max-width: 400px; position: fixed; top: 25%;
+					left: 50%; transform: translate(-50%, 0); z-index: 2000; padding: 20px;">	
+						<#assign preferences = freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
+						<@liferay_portlet["runtime"]
+							defaultPreferences=preferences
+							portletName="com_liferay_login_web_portlet_LoginPortlet"
+						/>
+				</div>
+			</div>
+			<#--  <div>
+				<div class="modal-backdrop fade hide" id="loginModalBackdrop"></div>
+
+				<div
+					aria-labelledby="loginModalLabel"
+					class="fade modal hide"
+					id="loginModal"
+					role="dialog"
+					tabindex="-1"
+				>
+					<div class="modal-dialog modal-sm">
+						<div class="modal-content">
+							<div class="modal-header">
+								<div class="modal-title" id="loginModalLabel">
+									${sign_in_text}
+								</div>
+
+								<button
+									aria-labelledby="Close"
+									class="close"
+									onclick="hideLoginModal()"
+									role="button"
+									type="button"
+								>
+									<@clay["icon"] symbol="times" />
+								</button>
+							</div>
+							<div class="modal-body">
+								<#assign preferences = freeMarkerPortletPreferences.getPreferences("portletSetupPortletDecoratorId", "barebone") />
+
+								<@liferay_portlet["runtime"]
+									defaultPreferences=preferences
+									portletName="com_liferay_login_web_portlet_LoginPortlet"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				const showLoginModal = () => {
+					document.getElementById('loginModalBackdrop').classList.remove('hide');
+					document.getElementById('loginModal').classList.remove('hide');
+					document.getElementsByTagName('body')[0].classList.add('modal-open');
+
+					setTimeout(() => {
+						document.getElementById('loginModal').classList.add('show');
+						document.getElementById('loginModalBackdrop').classList.add('show');
+
+						document.getElementById('_com_liferay_login_web_portlet_LoginPortlet_login').focus();
+					}, 1);
+				}
+
+				const hideLoginModal = () => {
+					document.getElementById('loginModal').classList.remove('show');
+					document.getElementById('loginModalBackdrop').classList.remove('show');
+
+					setTimeout(() => {
+						document.getElementById('loginModalBackdrop').classList.add('hide');
+						document.getElementById('loginModal').classList.add('hide');
+						document.getElementsByTagName('body')[0].classList.remove('modal-open');
+					}, 1);
+				}
+			</script>  -->
+		</#if>
 	</div>
 </div>
 

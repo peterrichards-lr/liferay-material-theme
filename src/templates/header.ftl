@@ -39,9 +39,20 @@
                         <#include "${full_templates_path}/language_selector.ftl" />
                     </#if>
 
-                    <#if !side_navigation>
+                    <#if !side_navigation_user>
                     <div class="autofit-col">
-                        <@liferay.user_personal_bar />
+                        <#if use_sign_in_modal && !is_signed_in>
+                        <#--  <a style="margin-right: 10px" class="sign-in text-default" data-redirect="${is_login_redirect_required?string}" href="javascript:void(0)" onclick="" id="sign-in" rel="nofollow">${sign_in_text}</a>  -->
+                            <button
+                                class="btn btn-unstyled sign-in text-default"
+                                onclick="$('#loginCardContainer').css('visibility', 'visible');"
+                                type="button"
+                            >
+                                ${sign_in_text}
+                            </button>
+                        <#else>
+                            <@liferay.user_personal_bar />
+                        </#if>
                     </div>
                     </#if>
                 </div>

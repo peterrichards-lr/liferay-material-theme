@@ -41,6 +41,10 @@
 
 		.search-bar-keywords-input {
 			width: 70% !important;
+
+			&:focus {
+				background: transparent;
+			}
 		}
 
 		.input-group-inset-item-after {
@@ -198,7 +202,7 @@
 		overflow: hidden;
 
 		@include media-breakpoint-down(md) {
-			background-color: #3B3B45;
+			@include frontend-token(background-color, --navigation-background-color, $complementary-color);
 			bottom: 0;
 			left: 0;
 			overflow: hidden;
@@ -210,14 +214,14 @@
 		}
 
 		.close {
-			color: $primary;
+			@include frontend-token(color, --navigation-selected-marker-color, $primary);
 			display: inline-flex;
 			margin-bottom: 16px;
 			margin-left: 19px;
 			padding: 0;
 
 			&:hover {
-				color: $primary;
+				@include frontend-token(color, --navigation-selected-marker-color, $primary);
 			}
 		}
 
@@ -351,30 +355,7 @@
 	}
 }
 
-// Minium fixes
-
-// .mini-cart-opener {
-// 	@media screen and (max-width: 5000px) {
-// 		right: 90px !important;
-// 		position: relative !important;
-// 	}
-// 	@media screen and (max-width: 1250px) {
-// 		right: 40px !important;
-// 		position: relative !important;
-// 	}
-// 	@media screen and (max-width: $bp-small ) {
-// 		right: 150px !important;
-// 		position: relative !important;
-// 	}
-// 	@media screen and (max-width: $bp-xsmall ) {
-// 		right: 95px !important;
-// 		position: relative !important;
-// 	}
-// 	@media screen and (max-width: $bp-xxsmall ) {
-// 		right: 95px !important;
-// 		position: relative !important;
-// 	}
-// }
+Minium fixes
 
 .mini-cart-opener::before {
 	background-color: $primary;
