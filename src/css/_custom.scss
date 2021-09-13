@@ -1,3 +1,13 @@
+$nhs-dark: #003087 !default;
+$nhs-blue: #005EB8 !default;
+$nhs-bright: #0072CE !default;
+$nhs-light: #41B6E6 !default;
+$nhs-aqua: #00A9CE !default;
+
+$brand-primary:              $nhs-blue;
+$brand-info:                 $nhs-light;
+$brand-inverse:              $nhs-dark;
+
 @import 'components/breadcrumb';
 @import 'components/color';
 @import 'components/group-item';
