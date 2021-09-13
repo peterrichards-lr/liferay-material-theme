@@ -1,21 +1,18 @@
 <#if show_footer>
-    <#assign footer_container_css_classes = "col-md-12 text-center text-md-left pb-3 pt-3" />
+    <#assign footer_container_css_classes = "container-fluid mr-sm-2 ml-sm-2 mr-md-8 ml-md-8 pb-3 pt-3" />
 
     <#if side_navigation>
-        <#assign footer_container_css_classes = footer_container_css_classes + " pl-lg-10" />
-    <#else>
-        <#assign footer_container_css_classes = footer_container_css_classes + " pl-lg-8" />
+        <#assign footer_container_css_classes = footer_container_css_classes + " mr-1 ml-6" />
     </#if>
+<footer class="footer-bg footer-text-color" id="footer" role="contentinfo">
+    <div class="${footer_container_css_classes}">
+        <div class="row">
+            <div class="text-center text-lg-left pl-2">
+                <@liferay.language key="powered-by" />
 
-    <footer class="footer-bg footer-text-color" id="footer" role="contentinfo">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="${footer_container_css_classes}">
-                    <@liferay.language key="powered-by" />
-
-                    <a class="footer-liferay-text-color" href="http://www.liferay.com" rel="external">Liferay</a>
-                </div>
+                <a class="footer-liferay-text-color" href="http://www.liferay.com" rel="external">Liferay</a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </#if>

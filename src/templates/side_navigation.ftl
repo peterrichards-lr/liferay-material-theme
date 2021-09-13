@@ -1,6 +1,12 @@
 <nav class="${nav_css_class}" id="navigation" role="navigation">
 	<h1 class="hide-accessible"><@liferay.language key="navigation" /></h1>
 
+	<a class="d-lg-none link-monospaced link-primary" data-content="#navigation" data-toggle="sidenav" href="#sitepages" role="button">
+		<svg class="lexicon-icon">
+			<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#bars"></use>
+		</svg>
+	</a>
+
 	<#if side_navigation_logo>
 		<div class="${logo_css_class}">
 			<img alt="${logo_description}" class="img-fluid logo-image" src="${site_logo}" />
@@ -13,7 +19,14 @@
 		</div>
 	</#if>
 
-	<ul aria-label="<@liferay.language key="site-pages" />" class="nav nav-stacked site-pages" role="menubar">
+	<ul aria-label="<@liferay.language key="site-pages" />" class="nav nav-stacked site-pages" role="menubar" id="sitepages">
+		<li class="d-lg-none">
+			<a class="close" data-content="#navigation" data-toggle="sidenav" href="#sitepages" role="button">
+				<svg class="lexicon-icon">
+					<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#compress"></use>
+				</svg>
+			</a>
+		</li>
 
 		<#list nav_items as nav_item>
 		<#assign
@@ -44,6 +57,7 @@
 		</li>
 		</#list>
 
+		<#if side_navigation_user>
 		<li class="nav-user-bar">
 			<div class="user-section">
 				<@liferay.user_personal_bar />
@@ -61,5 +75,6 @@
 				</span>
 			</div>
 		</li>
+		</#if>
 	</ul>
 </nav>

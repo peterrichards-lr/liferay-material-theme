@@ -5,9 +5,9 @@
 		.card-icon {
 			.material-icons {
 				svg {
-                    @include frontend-token(line-height, --card-header-icon-size, 2.75rem);
-                    @include frontend-token(width, --card-header-icon-size, 2.75rem);
-                    @include frontend-token(height, --card-header-icon-size, 2.75rem);
+					@include frontend-token(line-height, --card-header-icon-size, 2.75rem);
+					@include frontend-token(width, --card-header-icon-size, 2.75rem);
+					@include frontend-token(height, --card-header-icon-size, 2.75rem);
 					text-align: center;
 				}
 			}
@@ -24,9 +24,9 @@
 }
 
 .card {
-    .card-header {
-        z-index: unset !important;
-    }
+	.card-header {
+		z-index: unset !important;
+	}
 }
 
 // Header fixes
@@ -39,17 +39,28 @@
 	.search-bar-simple {
 		font-size: 1.5rem;
 
-		.search-bar-keywords-input {
-			width: 70% !important;
+		.search-bar-keywords-input-wrapper {
+			display: flex;
+			flex-grow: 1;
+			flex-wrap: nowrap;
+			flex-direction: row;
 
-			&:focus {
-				background: transparent;
+			.search-bar-keywords-input {
+				&:focus {
+					background: transparent;
+				}
 			}
-		}
 
-		.input-group-inset-item-after {
-			border: unset;
-			background: transparent;
+			.input-group-inset-item-after {
+				border: unset;
+				background: transparent;
+
+				.btn {
+					position: relative;
+					top: unset;
+					right: unset;
+				}
+			}
 		}
 	}
 }
@@ -72,20 +83,28 @@
 }
 
 .upper-header {
-    box-shadow: unset;
-    margin-bottom: unset;
+	box-shadow: unset;
+	margin-bottom: unset;
 
-    .container, .container-fluid  {
-        background: transparent;
-    }
+	.container,
+	.container-fluid {
+		background: transparent;
+
+		.site-name {
+			@include media-breakpoint-down(md) {
+				display: none;
+			}
+		}
+	}
 }
 
 .lower-header {
-    box-shadow: 0 4px 18px -10px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 4px 18px -10px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
 
-    .container, .container-fluid {
-        background: transparent;
-    }
+	.container,
+	.container-fluid {
+		background: transparent;
+	}
 }
 
 // Navigation
@@ -97,7 +116,12 @@
 }
 
 #navigation {
-    @include gradiant(--navigation-background-color, $complementary-color, --navigation-background-blend-color, $complementary-color);
+	@include gradiant(
+		--navigation-background-color,
+		$complementary-color,
+		--navigation-background-blend-color,
+		$complementary-color
+	);
 	bottom: 0;
 	@include frontend-token(color, --navigation-text-color, $gray-700);
 	display: flex;
@@ -112,14 +136,12 @@
 	z-index: 980;
 
 	@include media-breakpoint-down(md) {
-		align-items: center;
 		flex-direction: row;
 		height: auto;
 		justify-content: space-between;
 		margin-top: 0;
 		overflow: visible;
 		padding: 19px 16px;
-		position: relative;
 		transition: none;
 		width: auto;
 	}
@@ -137,7 +159,8 @@
 			opacity: 1;
 		}
 
-		.layout-name, .user-full-name {
+		.layout-name,
+		.user-full-name {
 			opacity: 1;
 		}
 	}
@@ -209,15 +232,15 @@
 			padding-bottom: 1.5rem;
 			padding-top: 1.5rem;
 			position: fixed;
-			top: 48px;
+			top: 0;
 			width: 0;
 		}
 
 		.close {
 			@include frontend-token(color, --navigation-selected-marker-color, $primary);
 			display: inline-flex;
-			margin-bottom: 16px;
-			margin-left: 19px;
+			margin-bottom: 15px;
+			margin-right: 15px;
 			padding: 0;
 
 			&:hover {
@@ -240,12 +263,6 @@
 		}
 	}
 
-	#layout_1 {
-		@include media-breakpoint-up(lg) {
-			margin-top: auto;
-		}
-	}
-
 	.nav-item {
 		margin-bottom: 16px;
 	}
@@ -261,11 +278,12 @@
 	}
 
 	.nav-item {
-		&:hover, &.selected {
+		&:hover,
+		&.selected {
 			box-shadow: inset 4px 0 0 -1px var(--navigation-selected-marker-color, $primary);
 
 			.nav-link {
-                @include frontend-token(color, --navigation-selected-text-color, $white);
+				@include frontend-token(color, --navigation-selected-text-color, $white);
 				font-weight: $font-weight-semi-bold;
 
 				.layout-icon {
@@ -277,7 +295,7 @@
 
 	.nav-link {
 		align-items: center;
-        @include frontend-token(color, --navigation-text-color, $gray-700);
+		@include frontend-token(color, --navigation-text-color, $gray-700);
 		display: flex;
 		height: 32px;
 		padding: 0 8px 0 58px;
@@ -285,14 +303,15 @@
 	}
 
 	.component-link {
-        @include frontend-token(color, --navigation-text-color, $gray-700);
+		@include frontend-token(color, --navigation-text-color, $gray-700);
 
 		&:hover {
 			@include frontend-token(color, --navigation-selected-text-color, $white);
 		}
 	}
 
-	.layout-name, .user-full-name {
+	.layout-name,
+	.user-full-name {
 		opacity: 0;
 		transition: opacity 0.35s ease-in;
 		vertical-align: middle;
@@ -355,7 +374,7 @@
 	}
 }
 
-Minium fixes
+// Minium fixes
 
 .mini-cart-opener::before {
 	background-color: $primary;
@@ -375,10 +394,10 @@ Minium fixes
 }
 
 .commerce-topbar-button {
-    padding: unset;
-    height: unset;
+	padding: unset;
+	height: unset;
 }
 
 .mini-cart:not(.is-open) .mini-cart-wrapper {
-    display: none;
+	display: none;
 }
