@@ -20,6 +20,8 @@
 	notifications_portlet_namespace = ""
 />
 
+<#assign show_control_menu = permissionChecker.isOmniadmin() || permissionChecker.isGroupAdmin(user_id)/>
+
 <#if wrap_widget_page_content && ((layout.isTypeContent() && themeDisplay.isStateMaximized()) || (layout.getType() == "portlet"))>
 	<#assign portal_content_css_class = "container" />
 <#else>

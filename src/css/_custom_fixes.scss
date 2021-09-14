@@ -128,7 +128,7 @@
 	flex-direction: column;
 	left: 0;
 	padding-bottom: 24px;
-	padding-top: 24px;
+	padding-top: 75px;
 	position: fixed;
 	top: 0;
 	transition: margin-left 0.5s ease, width 0.5s ease;
@@ -162,33 +162,6 @@
 		.layout-name,
 		.user-full-name {
 			opacity: 1;
-		}
-	}
-
-	body:not(.hide-control-menu) & {
-		@media (min-width: 992px) and (max-height: 824px) {
-			bottom: 0;
-			height: auto;
-		}
-	}
-
-	body.gsdc.open & {
-		@include media-breakpoint-up(lg) {
-			margin-left: 320px;
-		}
-	}
-
-	.has-control-menu & {
-		@include media-breakpoint-up(lg) {
-			margin-top: 56px;
-		}
-	}
-
-	.hide-control-menu & {
-		.site-pages {
-			@include media-breakpoint-down(md) {
-				top: 0;
-			}
 		}
 	}
 
