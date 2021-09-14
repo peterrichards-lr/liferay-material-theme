@@ -407,3 +407,10 @@
 		@include frontend-token(fill, --navigation-selected-marker-color, $primary);
 	}
 }
+
+.btn-add-to-cart {
+	margin: unset;
+	@include frontend-token(border-color, --navigation-selected-marker-color, $primary);
+    border-style: solid;
+    border-width: 2px;
+}
