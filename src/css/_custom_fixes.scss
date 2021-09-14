@@ -401,3 +401,9 @@
 .mini-cart:not(.is-open) .mini-cart-wrapper {
 	display: none;
 }
+
+.mini-cart-opener {
+	svg {
+		@include frontend-token(fill, --navigation-selected-marker-color, $primary);
+	}
+}
