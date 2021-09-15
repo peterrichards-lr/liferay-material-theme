@@ -6,12 +6,10 @@
     </#if>
 <footer class="footer-bg footer-text-color" id="footer" role="contentinfo">
     <div class="${footer_container_css_classes}">
-        <div class="row">
-            <div class="text-center text-lg-left pl-2">
-                <@liferay.language key="powered-by" />
+        <div class="text-center text-lg-left pl-2">
+            <@liferay.language key="powered-by" />
 
-                <a class="footer-liferay-text-color" href="http://www.liferay.com" rel="external">Liferay</a>
-            </div>
+            <a class="footer-liferay-text-color" href="http://www.liferay.com" rel="external">Liferay</a>
         </div>
     </div>
 </footer>
