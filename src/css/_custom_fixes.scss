@@ -4,6 +4,10 @@
 	background-color: transparent;
 }
 
+#footer {
+	overflow: hidden;
+}
+
 .card-stats {
 	.card-header.card-header-icon {
 		.card-icon {
@@ -72,6 +76,7 @@
 .portlet-language {
 	.dropdown {
 		.btn {
+			padding: .8rem 1.25rem;
 			background: transparent;
 			border: unset;
 			box-shadow: unset;
@@ -120,6 +125,7 @@
 }
 
 #navigation {
+	@include frontend-token(color, --navigation-text-color, $gray-700);
 	@include gradiant(
 		--navigation-background-color,
 		$complementary-color,
@@ -127,7 +133,6 @@
 		$complementary-color
 	);
 	bottom: 0;
-	@include frontend-token(color, --navigation-text-color, $gray-700);
 	display: flex;
 	flex-direction: column;
 	left: 0;
@@ -140,15 +145,19 @@
 	z-index: 980;
 
 	@include media-breakpoint-down(md) {
-		flex-direction: row;
-		height: auto;
-		justify-content: space-between;
-		margin-top: 0;
-		overflow: visible;
-		padding: 19px 16px;
-		transition: none;
-		width: auto;
+		width: unset;
+		background-color: transparent;
 	}
+
+	// @include media-breakpoint-down(md) {
+	// 	flex-direction: row;
+	// 	height: auto;
+	// 	justify-content: space-between;
+	// 	overflow: visible;
+	// 	padding: 19px 16px;
+	// 	transition: none;
+	// 	width: auto;
+	// }
 
 	&.open {
 		@include media-breakpoint-up(lg) {
@@ -202,13 +211,17 @@
 		overflow: hidden;
 
 		@include media-breakpoint-down(md) {
-			@include frontend-token(background-color, --navigation-background-color, $complementary-color);
+			@include gradiant(
+				--navigation-background-color,
+				$complementary-color,
+				--navigation-background-blend-color,
+				$complementary-color
+			);
 			bottom: 0;
 			left: 0;
-			overflow: hidden;
 			padding-bottom: 1.5rem;
 			padding-top: 1.5rem;
-			position: fixed;
+			position: absolute;
 			top: 0;
 			width: 0;
 		}
@@ -343,6 +356,10 @@
 	}
 }
 
+.has-control-menu {
+	margin-top: 58px;
+}
+
 .personal-menu-dropdown {
 	.dropdown {
 		.btn {
@@ -354,11 +371,11 @@
 // Minium fixes
 
 .mini-cart-opener::before {
-	background-color: $primary;
+	@include frontend-token(background-color, --primary, $primary);
 }
 
 .mini-cart-wrapper {
-	width: 380px;
+	width: 500px;
 	height: 70%;
 }
 
@@ -381,17 +398,27 @@
 
 .mini-cart-opener {
 	svg {
-		@include frontend-token(fill, --navigation-selected-marker-color, $primary);
+		@include frontend-token(fill, --lower-header-text-color, $lowerHeaderTextColor);;
 	}
 }
 
-.btn-add-to-cart {
-	margin: unset;
-	@include frontend-token(border-color, --navigation-selected-marker-color, $primary);
-    border-style: solid;
-    border-width: 2px;
+form[role=search] {
+	.input-group {
+		.input-group-item {
+			flex-wrap: nowrap;
+		}
+	}
 }
 
-#footer {
-	overflow: hidden;
+.btn {
+	padding: .75rem 1.75rem;
+}
+
+.pagination-items-per-page > button {
+	height: unset;
+}
+
+.component-action {
+	height: unset;
+	width: unset;
 }

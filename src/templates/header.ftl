@@ -1,8 +1,8 @@
 <#if show_header>
-    <#assign user_personal_bar_css_classes = "container-fluid user-peronal-bar mr-sm-2 ml-sm-2 mr-md-8 ml-md-8" />
+    <#assign user_personal_bar_css_classes = "container-fluid user-peronal-bar ml-sm-2 mr-md-8 ml-md-8" />
 
     <#if side_navigation>
-        <#assign user_personal_bar_css_classes = user_personal_bar_css_classes + " mr-1 ml-6" />
+        <#assign user_personal_bar_css_classes = user_personal_bar_css_classes + " mr-6 ml-6" />
     </#if>
 <header id="banner">
     <#if !side_navigation || show_account_selector || show_mini_cart>

@@ -1,11 +1,9 @@
+<#if show_control_menu>
+	<#assign nav_css_class = nav_css_class + " has-control-menu" />
+</#if>
+
 <nav class="${nav_css_class}" id="navigation" role="navigation">
 	<h1 class="hide-accessible"><@liferay.language key="navigation" /></h1>
-
-	<a class="d-lg-none link-monospaced link-primary" data-content="#navigation" data-toggle="sidenav" href="#sitepages" role="button">
-		<svg class="lexicon-icon">
-			<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#bars"></use>
-		</svg>
-	</a>
 
 	<#if side_navigation_logo>
 		<div class="${logo_css_class}">
