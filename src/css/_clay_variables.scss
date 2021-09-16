@@ -1,16 +1,17 @@
-$body-bg: #fff;
-$border-color: #f1f2f5;
-$bright-color: #1865fb;
-$complementary-color: #30313f;
-$dark-color: #272833;
-$input-bg: #f1f2f5;
-$light-color: #e7e7ed;
+$body-bg: #fff !default;
+$border-color: #f1f2f5 !default;
+$bright-color: #1865fb !default;
+$complementary-color: #30313f !default;
+$dark-color: #272833 !default;
+$input-bg: #f1f2f5 !default;
+$light-color: #e7e7ed !default;
+$btn-outline-secondary-color: #6b6c7e !default;
 
 $lead-font-weight: 400;
 $small-font-size: 0.875rem;
 
 $btn-outline-secondary: (
-	color: #6b6c7e,
+	color: $btn-outline-secondary-color,
 );
 
 $navigation-bar-size: (
@@ -23,7 +24,7 @@ $navigation-bar-light: (
 	border-color: $border-color,
 );
 
-$portlet-decorate-bg: #fff;
+$portlet-decorate-bg: #fff !default;
 $portlet-decorate-border: 1px solid $light-color;
 
 // Compat

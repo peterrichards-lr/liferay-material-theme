@@ -1,29 +1,29 @@
-$color-fg: #5c5e5e;
-$color-fg-alt: #7f848d;
+$color-fg: #5c5e5e !default;
+$color-fg-alt: #7f848d !default;
 
 // a lighter shadow for cards specific to Creative
 
-$color-shadow-creative: #d8d7d7;
+$color-shadow-creative: #d8d7d7 !default;
 
-$color-bg: #fff;
-$color-bg-medium: #fcfcfc;
-$color-bg-alt: #ffffff;
-$color-bg-dark: #34373e;
-$color-border: #eceef1;
-$color-shadow: rgba(92, 94, 94, 0.14);
-$color-disabled: #a4a7ae;
+$color-bg: #fff !default;
+$color-bg-medium: #fcfcfc !default;
+$color-bg-alt: #ffffff !default;
+$color-bg-dark: #34373e !default;
+$color-border: #eceef1 !default;
+$color-shadow: rgba(92, 94, 94, 0.14) !default;
+$color-disabled: #a4a7ae !default;
 
-$color-theme: $primary;
-$color-theme-dark: #3260c5;
-$color-theme-light: #c9daff;
-$color-theme-transparent: rgba($color-theme, 0.067);
+$color-theme: $primary !default;
+$color-theme-dark: #3260c5 !default;
+$color-theme-light: #c9daff !default;
+$color-theme-transparent: rgba($color-theme, 0.067) !default;
 
-$color-modal-mask: rgba(52, 55, 62, 0.6);
+$color-modal-mask: rgba(52, 55, 62, 0.6) !default;
 
-$color-mood-good: #4bc286;
-$color-mood-neutral: #fee4b8;
-$color-mood-bad: #ec676a;
-$color-mood-bad-bg: #fef7f7;
+$color-mood-good: #4bc286 !default;
+$color-mood-neutral: #fee4b8 !default;
+$color-mood-bad: #ec676a !default;
+$color-mood-bad-bg: #fef7f7 !default;
 
 $placeholder-colors: (
 	#9be2bd,
@@ -34,7 +34,7 @@ $placeholder-colors: (
 	#f5b3ef,
 	#b48ff7,
 	#639dff
-);
+) !default;
 
 $shadow: 0 10px 20px $color-shadow;
 $shadow-focus: 0 3px 20px 0 rgba($color-theme, 0.5);

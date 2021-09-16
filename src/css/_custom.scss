@@ -1,39 +1,32 @@
-$nhs-dark: #003087 !default;
-$nhs-blue: #005EB8 !default;
-$nhs-bright: #0072CE !default;
-$nhs-light: #41B6E6 !default;
-$nhs-aqua: #00A9CE !default;
+@import './vendor/material-dashboard/variables/colors';
+@import './custom_variables';
 
-$brand-primary:              $nhs-blue;
-$brand-info:                 $nhs-light;
-$brand-inverse:              $nhs-dark;
+@import './components/breadcrumb';
+@import './components/color';
+@import './components/group-item';
+@import './components/info-panel';
+@import './components/navbars';
+@import './components/sidebar';
+@import './components/splitter';
+@import './components/table';
+@import './components/widget';
+@import './portlet/portlet';
+@import './portlet/portlet_decorators';
+@import './portlet/portlet_hello_world';
 
-@import 'components/breadcrumb';
-@import 'components/color';
-@import 'components/group-item';
-@import 'components/info-panel';
-@import 'components/navbars';
-@import 'components/sidebar';
-@import 'components/splitter';
-@import 'components/table';
-@import 'components/widget';
-@import 'portlet/portlet';
-@import 'portlet/portlet_decorators';
-@import 'portlet/portlet_hello_world';
-
-@import '_custom_mixins';
-@import 'custom_properties';
+@import './custom_mixins';
+@import './custom_properties';
 
 .material-theme-main-class {
-	@import './vendor/material-dashboard.scss';
+	@import './vendor/material-dashboard';
 	@import "./formed/index";
 	@import "./minium/minium";
 	@import "./custom_fixes";
 }
 
 .material-theme-rtl-main-class {
-	@import './vendor/material-dashboard.scss';
-	@import './vendor/material-dashboard-rtl.scss';
+	@import './vendor/material-dashboard';
+	@import './vendor/material-dashboard-rtl';
 	@import "./formed/index";
 	@import "./minium/minium";
 	@import "./custom_fixes";

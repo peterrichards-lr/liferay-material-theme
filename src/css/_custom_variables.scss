@@ -1,0 +1,57 @@
+$brand-primary: #9c27b0;
+$primary: $brand-primary;
+
+$light-color: theme-color-level($brand-primary, 1) !default;
+$dark-color: theme-color-level($brand-primary, -1) !default;
+$complementary-color: complement($brand-primary);
+$invert-color: invert($brand-primary);
+
+$brand-info: $light-color;
+$brand-inverse: $invert-color;
+
+$off-white: $grey-50;
+
+$body-bg: $white !default;
+$border-color: $off-white !default;
+$bright-color: $brand-primary !default;
+$input-bg: $off-white !default;
+$btn-outline-secondary-color: $complementary-color !default;
+$portlet-decorate-bg: $white !default;
+
+$color-fg: $grey-a700;
+$color-fg-alt: $grey-600;
+
+// a lighter shadow for cards specific to Creative
+
+$color-shadow-creative: $off-white;
+
+$color-bg: $white;
+$color-bg-medium: $off-white;
+$color-bg-alt: $white;
+$color-bg-dark: $dark-color;
+$color-border: $border-color;
+$color-shadow: rgba($color-bg, 0.14);
+$color-disabled: $grey-500;
+
+$color-theme: $primary;
+$color-theme-dark: $dark-color;
+$color-theme-light: $light-color;
+$color-theme-transparent: rgba($brand-primary, 0.067);
+
+$color-modal-mask: rgba($dark-color, 0.6);
+
+$color-mood-good: $success;
+$color-mood-neutral: $warning;
+$color-mood-bad: $danger;
+$color-mood-bad-bg: $light;
+
+$placeholder-colors: (
+	#9be2bd,
+	#b3eff5,
+	#fee4b8,
+	#ffb78c,
+	#ff83a3,
+	#f5b3ef,
+	#b48ff7,
+	#639dff
+);
