@@ -1,9 +1,5 @@
 <#if show_header>
-    <#assign user_personal_bar_css_classes = "container-fluid user-peronal-bar ml-sm-2 mr-md-8 ml-md-8" />
-
-    <#if side_navigation>
-        <#assign user_personal_bar_css_classes = user_personal_bar_css_classes + " mr-6 ml-6" />
-    </#if>
+    <#assign user_personal_bar_css_classes = "container-fluid ml-2 mr-2 mr-md-6 ml-md-6" />
 <header id="banner">
     <#if !side_navigation || show_account_selector || show_mini_cart>
     <div class="navbar no-shadow navbar-classic navbar-top upper-header upper-header-bg upper-header-text-color">
@@ -43,7 +39,7 @@
                     <#if use_sign_in_modal && !is_signed_in>
                         <button
                             class="btn btn-unstyled sign-in text-default"
-                            onclick="$('#loginCardContainer').css('visibility', 'visible');"
+                            onclick="document.querySelector('#loginCardContainer').style.visibility = 'visible';"
                             type="button"
                         >
                             ${sign_in_text}

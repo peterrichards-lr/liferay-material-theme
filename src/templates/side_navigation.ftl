@@ -18,14 +18,7 @@
 	</#if>
 
 	<ul aria-label="<@liferay.language key="site-pages" />" class="nav nav-stacked site-pages" role="menubar" id="sitepages">
-		<li class="d-lg-none">
-			<a class="close" data-content="#navigation" data-toggle="sidenav" href="#sitepages" role="button">
-				<svg class="lexicon-icon">
-					<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#compress"></use>
-				</svg>
-			</a>
-		</li>
-
+		<#if has_navigation>
 		<#list nav_items as nav_item>
 		<#assign
 			nav_item_attr_has_popup = ""
@@ -54,6 +47,7 @@
 			</a>
 		</li>
 		</#list>
+		</#if>
 
 		<#if side_navigation_user>
 		<li class="nav-user-bar">

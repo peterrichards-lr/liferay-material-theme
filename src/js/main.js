@@ -18,47 +18,70 @@
  */
 AUI().ready(
     function(A) {
-		var $ = AUI.$;
+		const navigation = document.querySelector('#navigation');
+		const sidenavToggle = document.querySelector('#sidenavToggle');
+		const wrapper = document.querySelector('#wrapper')
+		var hoverActive = false;
 
-		function setupNavigationMenu() {
-			var $navigation = $('#navigation');
-
-			$navigation.hover(
-				function() {
-					$navigation.addClass('open');
-				},
-				function() {
-					$navigation.removeClass('open');
-				}
-			);
-
-			// Fix the issue that does not close on click. Ref DCTRL-350.
-
-			var userAvatar = $navigation.find('.text-default');
-
-			userAvatar.on(
-				'mousedown',
-				function(e) {
-					var sidenavToggle = $('.lfr-product-menu-panel.sidenav-menu-slider.open');
-
-					if ($('body').hasClass('open') && sidenavToggle.length > 0) {
-						setTimeout(
-							function() {
-								$('body').removeClass('open');
-								$('body').addClass('closed');
-								sidenavToggle.removeClass('open');
-								sidenavToggle.addClass('closed');
-
-								Liferay.Store('com.liferay.product.navigation.product.menu.web_productMenuState', 'closed');
-							},
-							100
-						);
-					}
-				}
+		function getViewPortWidth() {
+			return Math.max(
+				document.documentElement.clientWidth,
+				window.innerWidth || 0
 			);
 		}
 
+		function toggleSideNav() {
+			if (!navigation) {
+				return;
+			}
+			if (!wrapper) {
+				return;
+			}
+
+			if (navigation.classList.contains('open')) {
+				navigation.classList.remove('open');
+				wrapper.classList.remove('side-bar-open');
+			} else {
+				navigation.classList.add('open');
+				wrapper.classList.add('side-bar-open');
+			}
+		};
+
+		function toggleHover() {
+			if (!navigation) {
+				return;
+			}
+
+			if (getViewPortWidth() >= 992) {
+				if (!hoverActive) {
+					hoverActive = true;
+
+					if (navigation.classList.contains('open')) {
+						navigation.classList.remove('open');
+						wrapper.classList.remove('side-bar-open');
+					}
+
+					navigation.addEventListener('mouseover', toggleSideNav);
+					navigation.addEventListener('mouseout', toggleSideNav);	
+				}				
+			} else {
+				hoverActive = false;
+				navigation.removeEventListener('mouseover', toggleSideNav);
+				navigation.removeEventListener('mouseout', toggleSideNav);	
+			}
+		}
+		
+		function setupNavigationMenu() {
+			if (!sidenavToggle) {
+				return;
+			}
+			sidenavToggle.addEventListener('click', toggleSideNav);
+
+			toggleHover();
+		}
+
 		setupNavigationMenu();
+		window.addEventListener('resize', toggleHover);
 	}
 );
 

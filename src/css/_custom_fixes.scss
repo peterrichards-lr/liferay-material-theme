@@ -94,6 +94,8 @@
 .upper-header {
 	box-shadow: unset;
 	margin-bottom: unset;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
 
 	.container,
 	.container-fluid {
@@ -137,32 +139,21 @@
 	flex-direction: column;
 	left: 0;
 	padding-bottom: 24px;
-	padding-top: 75px;
+	padding-top: 98px;
 	position: fixed;
 	top: 0;
-	transition: margin-left 0.5s ease, width 0.5s ease;
+	transition: width 0.5s ease;
 	width: 70px;
 	z-index: 980;
 
 	@include media-breakpoint-down(md) {
-		width: unset;
+		width: 0px;
 		background-color: transparent;
+		overflow: hidden;
 	}
 
-	// @include media-breakpoint-down(md) {
-	// 	flex-direction: row;
-	// 	height: auto;
-	// 	justify-content: space-between;
-	// 	overflow: visible;
-	// 	padding: 19px 16px;
-	// 	transition: none;
-	// 	width: auto;
-	// }
-
 	&.open {
-		@include media-breakpoint-up(lg) {
-			width: 185px;
-		}
+		width: 185px;
 
 		.site-name {
 			display: inline;
@@ -223,7 +214,6 @@
 			padding-top: 1.5rem;
 			position: absolute;
 			top: 0;
-			width: 0;
 		}
 
 		.close {
@@ -238,17 +228,10 @@
 			}
 		}
 
-		&.sidenav-transition {
-			@include media-breakpoint-down(md) {
-				overflow: hidden;
-			}
-		}
-
 		&.open {
 			@include media-breakpoint-down(md) {
 				@include overflow-auto;
-
-				width: 275px;
+				width: 100%;
 			}
 		}
 	}
@@ -357,7 +340,11 @@
 }
 
 .has-control-menu {
-	margin-top: 58px;
+	margin-top: 56px;
+
+	@include media-breakpoint-down(md) {
+		margin-top: 48px;
+	}
 }
 
 .personal-menu-dropdown {
