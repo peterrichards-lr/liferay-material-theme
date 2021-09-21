@@ -9,3 +9,9 @@ It also borrows from the theme created by Kris Patefield (https://github.com/kri
 1. `npm install`
 2. `npm run init`
 3. `npm run deploy`
+
+### Some Screenshots
+
+![screenshot](/images/responsive_monitor.png)
+
+![screenshot](/images/responsive_tablet.png)
