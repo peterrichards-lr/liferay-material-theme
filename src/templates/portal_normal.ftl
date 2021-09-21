@@ -38,12 +38,8 @@
 </#if>
 		<#include "${full_templates_path}/header.ftl" />
 
-		<#if side_navigation>
 		<section class="${portal_content_css_class} content-side-navigation minium-frame flex-fill" id="content">
-		<#else>
-		<section class="${portal_content_css_class} minium-frame flex-fill" id="content">
-		</#if>
-			<#if side_navigation && !css_class?contains("has-edit-mode-menu")>
+			<#if !css_class?contains("has-edit-mode-menu")>
 				<#include "${full_templates_path}/side_navigation.ftl" />
 			</#if>
 

@@ -1,7 +1,7 @@
 <#if show_header>
-    <#assign user_personal_bar_css_classes = "container-fluid ml-2 mr-2 mr-md-6 ml-md-6" />
+    <#assign user_personal_bar_css_classes = "container-fluid ml-2 mr-6 ml-md-6" />
 <header id="banner">
-    <#if !side_navigation || show_account_selector || show_mini_cart>
+    <#if show_account_selector || show_mini_cart>
     <div class="navbar no-shadow navbar-classic navbar-top upper-header upper-header-bg upper-header-text-color">
     <#else>
     <div class="navbar navbar-classic navbar-top upper-header upper-header-bg upper-header-text-color">
@@ -20,13 +20,17 @@
 
                 <#assign preferences = freeMarkerPortletPreferences.getPreferences({"portletSetupPortletDecoratorId": "barebone", "destination": "/search"}) />
 
-                <#if show_header_search>
                 <div class="autofit-col autofit-col-expand">
-                    <div class="justify-content-md-center justify-content-lg-end navbar-form  upper-header-text-color" role="search">
+                <#if show_header_search>
+                    <#assign search_bar_css = "navbar-form upper-header-text-color">
+                    <#if !side_navigation_logo>
+                        <#assign search_bar_css = search_bar_css + " justify-content-md-center justify-content-lg-end">
+                    </#if>
+                    <div class="${search_bar_css}" role="search">
                         <@liferay.search_bar default_preferences="${preferences}" />
                     </div>
-                </div>
                 </#if>
+                </div>
 
                 <#if show_language_selector>
                 <div class="autofit-col d-none d-md-block language-selector">
@@ -34,7 +38,7 @@
                 </div>
                 </#if>
 
-                <#if !side_navigation_user>
+                <#if !side_navigation_user || !is_signed_in>
                 <div class="autofit-col">
                     <#if use_sign_in_modal && !is_signed_in>
                         <button

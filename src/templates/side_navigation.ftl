@@ -2,11 +2,23 @@
 	<#assign nav_css_class = nav_css_class + " has-control-menu" />
 </#if>
 
-<nav class="${nav_css_class}" id="navigation" role="navigation">
+<#assign nav_style = "padding-top: 107px;">
+<#if side_navigation_logo>
+	<#assign nav_style = "padding-top: 15px;">
+</#if>
+
+<#if !show_header>
+	<a class="d-lg-none link-monospaced link-primary" data-toggle="sidenav" href="#sitepages" role="button" id="sidenavToggle">
+		<svg class="lexicon-icon">
+			<use xlink:href="${themeDisplay.getPathThemeImages()}/clay/icons.svg#bars"></use>
+		</svg>
+	</a>
+</#if>
+<nav class="${nav_css_class}" id="navigation" role="navigation" style="${nav_style}">
 	<h1 class="hide-accessible"><@liferay.language key="navigation" /></h1>
 
 	<#if side_navigation_logo>
-		<div class="${logo_css_class}">
+		<div class="${logo_css_class}" style="margin-bottom: 22px;">
 			<img alt="${logo_description}" class="img-fluid logo-image" src="${site_logo}" />
 
 			<#if show_site_name>
@@ -49,22 +61,31 @@
 		</#list>
 		</#if>
 
-		<#if side_navigation_user>
+		<#if (side_navigation_user && is_signed_in) || (side_navigation_user && !show_header)>
 		<li class="nav-user-bar">
 			<div class="user-section">
-				<@liferay.user_personal_bar />
-
-				<#if notifications_portlet_url?? && notifications_count gt 0>
-					<a href="${notifications_link}">
-						<span class="badge badge-danger panel-notifications-count">
-							<span class="badge-item badge-item-expand">${notifications_count}</span>
-						</span>
+				<#if use_sign_in_modal && !is_signed_in>
+					<a onclick="document.querySelector('#loginCardContainer').style.visibility = 'visible';" class="sign-in text-default" data-redirect="true">
+					<svg aria-hidden="true" class="lexicon-icon lexicon-icon-user" focusable="false">
+						<use href="http://localhost:8080/o/liferay-material-theme/images/clay/icons.svg#user"></use>
+					</svg>
+					<span class="taglib-icon-label">Sign In</span>
 					</a>
-				</#if>
+				<#else>
+					<@liferay.user_personal_bar />
 
-				<span class="user-full-name">
-					${user.getFullName()}
-				</span>
+					<#if notifications_portlet_url?? && notifications_count gt 0>
+						<a href="${notifications_link}">
+							<span class="badge badge-danger panel-notifications-count">
+								<span class="badge-item badge-item-expand">${notifications_count}</span>
+							</span>
+						</a>
+					</#if>
+
+					<span class="user-full-name">
+						${user.getFullName()}
+					</span>
+				</#if>
 			</div>
 		</li>
 		</#if>

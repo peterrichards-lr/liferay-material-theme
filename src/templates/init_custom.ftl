@@ -3,6 +3,7 @@
 	show_header = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-header"))
 	side_navigation = getterUtil.getBoolean(themeDisplay.getThemeSetting("side-navigation"))
 	side_navigation_logo = getterUtil.getBoolean(themeDisplay.getThemeSetting("side-navigation-logo"))
+	side_navigation_user = getterUtil.getBoolean(themeDisplay.getThemeSetting("side-navigation-user"))
 	show_header_search = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-header-search"))
 	wrap_widget_page_content = getterUtil.getBoolean(themeDisplay.getThemeSetting("wrap-widget-page-content"))
 	show_language_selector = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-language-selector"))
@@ -10,7 +11,6 @@
 	show_account_selector = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-account-selector"))
 	show_mini_cart = getterUtil.getBoolean(themeDisplay.getThemeSetting("show-mini-cart"))
 	use_sign_in_modal = getterUtil.getBoolean(themeDisplay.getThemeSetting("use-sign-in-modal"))
-	side_navigation_user = false
 />
 
 <#assign

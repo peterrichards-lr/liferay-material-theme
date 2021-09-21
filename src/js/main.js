@@ -72,12 +72,12 @@ AUI().ready(
 		}
 		
 		function setupNavigationMenu() {
+			toggleHover();
+
 			if (!sidenavToggle) {
 				return;
 			}
 			sidenavToggle.addEventListener('click', toggleSideNav);
-
-			toggleHover();
 		}
 
 		setupNavigationMenu();
