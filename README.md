@@ -12,6 +12,8 @@ It also borrows from the theme created by Kris Patefield (https://github.com/kri
 
 ### Some Screenshots
 
-![screenshot](/images/responsive_monitor.png)
+<img src="/images/responsive_monitor.png" width="372">
 
-![screenshot](/images/responsive_tablet.png)
+<img src="/images/responsive_tablet.png" width="153">
+
+<img src="/images/sample_fragments.png" width="370">
